@@ -48,7 +48,7 @@ function hotelCost (numDays){
     return totalHotelCost;
 }
 // console used for testing
-console.log(hotelCost(11));
+// console.log(hotelCost(11));
 
 
 // Function to find the friend who has the longest name from an array of friends' names
@@ -60,8 +60,12 @@ function megaFriend (friends){
             maxName = friends[i];
         }
     }
+    // If maxName gets No name inside the array, warning //
+
+    if (maxName ==0){
+        maxName = "No name";
+    }
     return maxName;
 }
 // console used for testing
-console.log(megaFriend(['rahim-111', 'kareem', 'hashmal0']));
-
+// console.log(megaFriend(["sdhsjdh", "sdksjdskjd"]));
