@@ -75,19 +75,29 @@ function hotelCost(numDays) {
 // Function to find the friend who has the longest name from an array of friends' names
 
 function megaFriend (friends){
-    var maxName = '';
-    for (var i = 0; i<friends.length; i++){
-        if(friends[i].length > maxName.length){
-            maxName = friends[i];
-            
+    
+    var checkArray = Array.isArray(friends);
+   
+    if(checkArray !== true){
+        var arrayType = "It's not an array. Please insert names inside an Array.";
+        return arrayType;
+    
+    } else if (friends.length == 0){
+        var arrayValue = "No name given. Please insert array of names inside the function.";
+        return arrayValue;
+    
+    } else if (checkArray == true){
+        var maxName = friends[0];
+        for (var i = 0; i<friends.length; i++){
+        
+            if(friends[i].length > maxName.length){
+                maxName = friends[i];
+                
+            }
         }
-    }
-    // If maxName gets No name inside the array, warning 
-
-    if (maxName == 0){
-        maxName = "No name given. Please insert names inside the function.";
-    }
-    return maxName;
+        return maxName;
+    
+    }   
 }
 
-// console.log(megaFriend([]));
+// console.log(megaFriend(["David", "Humphrey", "Kamala", "Shubola Som"]));
